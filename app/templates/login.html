@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+      <form class="form-signin" role="form" action="" method="post">
+        {{form.hidden_tag()}}
+        <h4 class="form-signin-heading"><strong>User login</strong></h4>
+        <input type="text" name="username" class="form-control" placeholder="Username" autofocus required>
+        {% for error in form.errors.username %}
+        <span class="text-danger"> *{{error}}*</span>
+        {% endfor %}
+        <input type="password"name="password" class="form-control" placeholder="Password" required>
+        {% for error in form.errors.password %}
+        <span class="text-danger">*{{ error }}*</span>
+        {% endfor %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock content %}
+
